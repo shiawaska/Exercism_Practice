@@ -1,0 +1,24 @@
+public static class CollatzConjecture
+{
+    public static int Steps(int number)
+    {
+        if (number <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(number), "Input must be a positive integer greater than zero.");
+        }
+        var count = 0;
+        while (number > 1)
+        {
+            count += 1;
+            if (number % 2 == 0)
+            {
+                number /= 2;
+            }
+            else
+            {
+                number = 3 * number + 1;
+            }
+        }
+        return count;
+    }
+}
